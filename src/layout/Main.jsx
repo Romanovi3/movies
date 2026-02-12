@@ -15,7 +15,7 @@ const Main = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}&type=${type}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}&type=${type}`)
             .then(res => res.json())
             .then(data => setMovieList(data.Search))
             .then(() => setLoading(true))

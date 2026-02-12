@@ -6,13 +6,13 @@ import Main from './layout/Main.jsx'
 function App() {
 
 
-  return (
-    <>
-      <Header />
-      <Main/>
-      <Footer/>
-    </>
-  )
+    return (
+        <>
+            <Header/>
+            <Main/>
+            <Footer/>
+        </>
+    )
 }
 
 export default App

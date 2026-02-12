@@ -4,12 +4,13 @@ import {useState} from 'react'
 const Filter = ({setType}) => {
 
     const [filter, setFilter] = useState({
-        all:'',
+        all: '',
         movie: 'movie',
         series: 'series',
         game: 'game'
     });
-    async function filterMovies (e){
+
+    async function filterMovies(e) {
         const {value} = e.currentTarget;
 
         setType(value)

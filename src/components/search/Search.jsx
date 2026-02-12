@@ -5,7 +5,7 @@ const Search = ({setMovie}) => {
 
     const [searchFilm, setSearchFilm] = useState('');
 
-   async function handleSearch(){
+    async function handleSearch() {
         await setMovie(searchFilm);
 
         setSearchFilm('')
@@ -20,7 +20,9 @@ const Search = ({setMovie}) => {
                 placeholder="Search..."
                 value={searchFilm}
                 onChange={(e) => setSearchFilm(e.target.value)}
-                onKeyUp={(e)=>{ e.key === 'Enter' && handleSearch() }}
+                onKeyUp={(e) => {
+                    e.key === 'Enter' && handleSearch()
+                }}
             />
         </div>
     );
