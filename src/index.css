@@ -20,11 +20,13 @@
     font-size: 2rem;
     margin: 0;
 }
-.header p{
+.header a{
     cursor: pointer;
     transition: 300ms ease-in-out;
+    text-decoration: none;
+    color: #000;
 }
-.header p:hover{
+.header a:hover{
     color: #ffffff;
 }
 .footer{
@@ -38,8 +40,9 @@
     height: fit-content;
 }
 .preloader{
-    margin: 0 auto;
-    font-size: 2rem;
+    margin: 3rem auto;
+    text-align: center;
+    font-size: 3rem;
 }
 .movieList{
     display: flex;
@@ -127,4 +130,9 @@
     width: 100%;
     gap: 2rem;
     justify-content: center;
+    align-items: center;
+}
+.filter__form span{
+    margin-right: 0.25rem;
+    vertical-align: center;
 }

@@ -4,19 +4,23 @@ import {useState, useEffect} from "react";
 import Search from "../components/search/Search.jsx";
 import Filter from "../components/filter/Filter.jsx";
 
+const API_KEY = import.meta.env.VITE_API_KEY
+
 
 const Main = () => {
 
     const [movieList, setMovieList] = useState([]);
     const [movie, setMovie] = useState('John Wick');
     const [type, setType] = useState('');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch(`http://www.omdbapi.com/?apikey=bba39dee&s=${movie}&type=${type}`)
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}&type=${type}`)
             .then(res => res.json())
             .then(data => setMovieList(data.Search))
-    }, [movieList, type]);
-
+            .then(() => setLoading(true))
+            .catch(() => setLoading(false));
+    }, [movie, type]);
 
 
     return (
@@ -27,7 +31,7 @@ const Main = () => {
             <Filter
                 setType={setType}
             />
-            {!movieList.length ?
+            {!loading ?
                 <h2 className='preloader'>Loading...</h2>
                 :
                 <MovieList movieList={movieList}/>
